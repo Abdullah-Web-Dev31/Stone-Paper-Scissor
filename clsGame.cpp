@@ -1,0 +1,25 @@
+#pragma
+#include <iostream>
+using namespace std;
+
+ class clsGame {
+
+ public:
+	 enum  enOptions { Stone = 1, Paper = 2, Scissor = 3 };
+
+	  enOptions ChooisingOption() {
+		 short op;
+		 cout << "\nYour Choice : [1]:Stone, [2]:Paper, [3]:Scissor ?";
+		 cin >> op;
+
+		 while (op <= 0 || op > 3) {
+			 cout << "\nWrong Choise ";
+			 cout << "\nYour Choice : [1]:Stone, [2]:Paper, [3]:Scissor ?";
+			 cin >> op;
+
+		 }
+		 return (enOptions)op;
+	 }
+			
+
+};
