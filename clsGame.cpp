@@ -6,6 +6,18 @@ using namespace std;
 
  public:
 
+	 int ReadNumber(string msg = "Please eneter a posetave number? ") {
+		 short input;
+		 cout << msg;
+		 cin >> input;
+		 while (input <= 0) {
+			 cout << "\n Wron input\n";
+			 cout << msg;
+			 cin >> input;
+
+		 }
+		 return input;
+	 }
 	 enum  enOptions { Stone = 1, Paper = 2, Scissor = 3 };
 
 	  enOptions ChooisingOption() {
