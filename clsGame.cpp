@@ -37,7 +37,16 @@ using namespace std;
 	 }
 	  
 	  enum enWinner{Player=1,Computer=2,Draw=3};
-
+	  string WinnerString(enWinner winner) {
+		  switch (winner) {
+		  case enWinner::Player:
+			  return "Player";
+		  case enWinner::Computer:
+			  return "Computer";
+		  case enWinner::Draw:
+			  return "Draw";
+		  }
+	  }
 
 
 	  struct GameInfo
@@ -47,6 +56,7 @@ using namespace std;
 		  int ComputerWonTime;
 		  int DrawTime;
 		  int FinalWinner;
+		  enWinner WhoWinner;
 	  };
 
 	  string OptionString(enOptions op)
@@ -96,6 +106,30 @@ using namespace std;
 
 		  }
 	  }
-			
+
+	  GameInfo stGameinfo;
+	  struct containerInfoRound
+	  {
+		  int Round_Number;
+		  enOptions player_Choice;
+		  enOptions Computerr_Choice;
+		  enWinner Who_Winner;
+	  };
+	  void PrinRoundInfo(containerInfoRound round_info) {
+
+		  cout << "\n";
+		  cout << "\n_____________Round [" <<round_info.Round_Number << "] ____________\n";
+
+		  cout << "\nPlayer Choice : "<<OptionString(round_info.player_Choice);
+		  cout << "\nComputer Choice : " << OptionString(round_info.Computerr_Choice);
+		  cout << "\nRound Winner : " << WinnerString(round_info.Who_Winner);
+
+
+		  cout << "\n\n___________________________________\n";
+
+
+	  }
+
+
 
 };
