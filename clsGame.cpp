@@ -4,9 +4,9 @@ using namespace std;
 
  class clsGame {
 
- public:
+ private:
 
-	 int ReadNumber(string msg = "Please eneter a posetave number? ") {
+	 int ReadNumber(string msg = "Please eneter how many rounds do you want ? ") {
 		 short input;
 		 cout << msg;
 		 cin >> input;
@@ -55,7 +55,7 @@ using namespace std;
 		  int PlyearWonTime;
 		  int ComputerWonTime;
 		  int DrawTime;
-		  int FinalWinner;
+		  
 		  enWinner WhoWinner;
 	  };
 
@@ -149,6 +149,34 @@ using namespace std;
 		  return info;
 	  }
 
+	  void GameOverScreen(GameInfo gameInfo) {
+		  cout << "\n\n";
+		  cout << "\t\t\t\t------------------------------------------------";
+		  cout << "\n\n\t\t\t\t\t\t\t+++ G A M E  O V E R +++\n\n";
+		  cout << "\t\t\t\t------------------------------------------------";
+		  cout << "\n\n";
+		  cout << "\t\t\t\t_________________ [ Game Results ]________________";
+		  cout << "\n\n";
+		  cout << "\t\t\t\tGame Rounds      : " << gameInfo.GameRound << " \n";
+		  cout << "\t\t\t\Player Won time   : " << gameInfo.PlyearWonTime << " \n";
+		  cout << "\t\t\t\tCompute Won time : " << gameInfo.ComputerWonTime << " \n";
+		  cout << "\t\t\t\Draw Time         : " << gameInfo.DrawTime << " \n";
+		  cout << "\t\t\t\Final Winner      : " << WinnerString(gameInfo.WhoWinner) << " \n";
+		  cout << "\n\n";
+		  cout << "\t\t\t\t------------------------------------------------";
+
+	  }
+
+	  enWinner finalWinnerLogic(GameInfo gameInfo)
+	  {
+		  if (gameInfo.ComputerWonTime > gameInfo.PlyearWonTime)
+			  return enWinner::Computer;
+		  else if (gameInfo.ComputerWonTime < gameInfo.PlyearWonTime)
+			  return  enWinner::Player;
+		  else
+			  return enWinner::Draw;
+	  }
+
 	  void StartRounds() {
 		  int rounds = ReadNumber();
 		  stGameinfo = GameInfo();
@@ -164,7 +192,28 @@ using namespace std;
 			  winner = Who_Win_In_Random(Player, Compurer);
 			  roundInfo = GetRoundInfo(i, Player, Compurer, winner);
 			  PrintRoundInfo(roundInfo);
+
+			  if (winner == enWinner::Computer)
+				  stGameinfo.ComputerWonTime++;
+			  else if (winner == enWinner::Player)
+				  stGameinfo.PlyearWonTime++;
+			  else
+				  stGameinfo.DrawTime++;
 		  }
+
+		  stGameinfo.WhoWinner = finalWinnerLogic(stGameinfo);
+		  GameOverScreen(stGameinfo);
+	  }
+	  public:
+
+	  void StartGame() {
+		  char Answer = 'Y';
+		  do {
+			  StartRounds();
+			  cout << "\n";
+			  cout << "\t\t\t\tdo you want to play again ? Y/N? ";;
+			  cin >> Answer;
+		  } while (Answer == 'Y' || Answer == 'y');
 	  }
 
 };
