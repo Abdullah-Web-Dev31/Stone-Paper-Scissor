@@ -1,4 +1,6 @@
-﻿  main.cpp
+﻿  clsGame.cpp
+  main.cpp
+  Generating Code...
 C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(49,1): warning C4715: 'clsGame::WinnerString': not all control paths return a value
 C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(72,1): warning C4715: 'clsGame::OptionString': not all control paths return a value
   Stone-Paper-Scissor.vcxproj -> C:\Users\qader\source\repos\Stone-Paper-Scissor\x64\Debug\Stone-Paper-Scissor.exe

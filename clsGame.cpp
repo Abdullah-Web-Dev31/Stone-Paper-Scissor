@@ -168,10 +168,19 @@ using namespace std;
 	  enWinner finalWinnerLogic(GameInfo gameInfo)
 	  {
 		  if (gameInfo.ComputerWonTime > gameInfo.PlyearWonTime)
+		  {
+			  system("color 0C");
 			  return enWinner::Computer;
+		  }
 		  else if (gameInfo.ComputerWonTime < gameInfo.PlyearWonTime)
+		  {
+			  system("color 0A");
+
 			  return  enWinner::Player;
+		  }
 		  else
+			  system("color 06");
+
 			  return enWinner::Draw;
 	  }
 
@@ -193,11 +202,22 @@ using namespace std;
 			  PrintRoundInfo(roundInfo);
 
 			  if (winner == enWinner::Computer)
+			  {
+				  system("color 0C");
 				  stGameinfo.ComputerWonTime++;
+			  }
 			  else if (winner == enWinner::Player)
+			  {
+				  system("color 0A");
+
 				  stGameinfo.PlyearWonTime++;
+			  }
 			  else
+			  {
+				  system("color 06");
+
 				  stGameinfo.DrawTime++;
+			  }
 		  }
 
 		  stGameinfo.WhoWinner = finalWinnerLogic(stGameinfo);
@@ -208,6 +228,8 @@ using namespace std;
 	  void StartGame() {
 		  char Answer = 'Y';
 		  do {
+			  system("cls"); 
+			  system("color 07");
 			  StartRounds();
 			  cout << "\n";
 			  cout << "\t\t\t\tdo you want to play again ? Y/N? ";;
