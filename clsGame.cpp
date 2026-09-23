@@ -115,7 +115,7 @@ using namespace std;
 		  enOptions Computerr_Choice;
 		  enWinner Who_Winner;
 	  };
-	  void PrinRoundInfo(containerInfoRound round_info) {
+	  void PrintRoundInfo(containerInfoRound round_info) {
 
 		  cout << "\n";
 		  cout << "\n_____________Round [" <<round_info.Round_Number << "] ____________\n";
@@ -130,17 +130,26 @@ using namespace std;
 
 	  }
 
-	  void StartRounds() {
-		  int rounds = ReadNumber();
-		  stGameinfo = GameInfo();
-		  enOptions Player;
-		  enOptions Compurer;
-		  for (int i = 1; i <= rounds; i++) {
-			  cout << "\b\bRound [" << i << "] begins:\n";
-
-			  Player = ChooisingOption();
-		  }
+	  int RandomNumber(int from, int to)
+	  {
+		  int randNum = rand() % (to - from + 1) + from;
+		  return randNum;
 	  }
 
+	  enOptions GetRandomComputerChoice() {
+		  return (enOptions)RandomNumber(1, 3);
+	  }
+
+	  containerInfoRound GetRoundInfo(int roundnumber, enOptions player, enOptions computer, enWinner winner) {
+		  containerInfoRound info;
+		  info.Round_Number = roundnumber;
+		  info.player_Choice = player;
+		  info.Computerr_Choice = computer;
+		  info.Who_Winner = winner;
+		  return info;
+	  }
+
+
+	  }
 
 };
