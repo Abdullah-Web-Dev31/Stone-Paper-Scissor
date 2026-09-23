@@ -75,28 +75,26 @@ using namespace std;
 
 		  switch (PlayerChoice) {
 		  case enOptions::Paper:
-			  if (Computer == enOptions::Scissor)
+			  if (ComputerChoice == enOptions::Scissor)
 				  return enWinner::Computer;
-			  else if (Computer == enOptions::Stone)
+			  else if (ComputerChoice == enOptions::Stone)
 				  return enWinner::Player;
 			  else
 				  return enWinner::Draw;
 
 		  case enOptions::Scissor:
 
-			  if (Computer == enOptions::Scissor)
+			  if (ComputerChoice == enOptions::Scissor)
 				  return enWinner::Draw;
-			  else if (Computer == enOptions::Stone)
+			  else if (ComputerChoice == enOptions::Stone)
 				  return enWinner::Computer;
 			  else
 				  return enWinner::Player;
 
 		  case enOptions::Stone:
-
-
-			  if (Computer == enOptions::Scissor)
+			  if (ComputerChoice == enOptions::Scissor)
 				  return enWinner::Player;
-			  else if (Computer == enOptions::Stone)
+			  else if (ComputerChoice == enOptions::Stone)
 				  return enWinner::Draw;
 			  else
 				  return enWinner::Computer;
@@ -120,12 +118,12 @@ using namespace std;
 		  cout << "\n";
 		  cout << "\n_____________Round [" <<round_info.Round_Number << "] ____________\n";
 
-		  cout << "\nPlayer Choice : "<<OptionString(round_info.player_Choice);
+		  cout << "\nPlayer Choice   : "<<OptionString(round_info.player_Choice);
 		  cout << "\nComputer Choice : " << OptionString(round_info.Computerr_Choice);
-		  cout << "\nRound Winner : " << WinnerString(round_info.Who_Winner);
+		  cout << "\nRound Winner    : " << WinnerString(round_info.Who_Winner);
 
 
-		  cout << "\n\n___________________________________\n";
+		  cout << "\n\n___________________________________\n\n";
 
 
 	  }
@@ -152,16 +150,16 @@ using namespace std;
 	  void GameOverScreen(GameInfo gameInfo) {
 		  cout << "\n\n";
 		  cout << "\t\t\t\t------------------------------------------------";
-		  cout << "\n\n\t\t\t\t\t\t\t+++ G A M E  O V E R +++\n\n";
+		  cout << "\n\n\t\t\t\t\t+++ G A M E  O V E R +++\n\n";
 		  cout << "\t\t\t\t------------------------------------------------";
 		  cout << "\n\n";
 		  cout << "\t\t\t\t_________________ [ Game Results ]________________";
 		  cout << "\n\n";
-		  cout << "\t\t\t\tGame Rounds      : " << gameInfo.GameRound << " \n";
-		  cout << "\t\t\t\Player Won time   : " << gameInfo.PlyearWonTime << " \n";
-		  cout << "\t\t\t\tCompute Won time : " << gameInfo.ComputerWonTime << " \n";
-		  cout << "\t\t\t\Draw Time         : " << gameInfo.DrawTime << " \n";
-		  cout << "\t\t\t\Final Winner      : " << WinnerString(gameInfo.WhoWinner) << " \n";
+		  cout << "\t\t\t\tGame Rounds       : " << gameInfo.GameRound << " \n";
+		  cout << "\t\t\t\tPlayer Won time   : " << gameInfo.PlyearWonTime << " \n";
+		  cout << "\t\t\t\tCompute Won time  : " << gameInfo.ComputerWonTime << " \n";
+		  cout << "\t\t\t\tDraw Time         : " << gameInfo.DrawTime << " \n";
+		  cout << "\t\t\t\tFinal Winner      : " << WinnerString(gameInfo.WhoWinner) << " \n";
 		  cout << "\n\n";
 		  cout << "\t\t\t\t------------------------------------------------";
 
@@ -184,8 +182,9 @@ using namespace std;
 		  enOptions Compurer;
 		  enWinner winner;
 		  containerInfoRound roundInfo;
+		  stGameinfo.GameRound = rounds;
 		  for (int i = 1; i <= rounds; i++) {
-			  cout << "\b\bRound [" << i << "] begins:\n";
+			  cout << "\n\nRound [" << i << "] begins:\n";
 
 			  Player = ChooisingOption();
 			  Compurer = GetRandomComputerChoice();
