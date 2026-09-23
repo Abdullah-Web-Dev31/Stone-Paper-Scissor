@@ -1,8 +1,12 @@
 
 #include <iostream>
+#include "clsGame.cpp"
 using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+    srand((unsigned)time(NULL));
+
+    clsGame Game;
+    Game.StartGame();
 }
 
