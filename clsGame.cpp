@@ -5,12 +5,15 @@ using namespace std;
  class clsGame {
 
  public:
+
 	 enum  enOptions { Stone = 1, Paper = 2, Scissor = 3 };
 
 	  enOptions ChooisingOption() {
 		 short op;
 		 cout << "\nYour Choice : [1]:Stone, [2]:Paper, [3]:Scissor ?";
 		 cin >> op;
+
+
 
 		 while (op <= 0 || op > 3) {
 			 cout << "\nWrong Choise ";
@@ -20,6 +23,9 @@ using namespace std;
 		 }
 		 return (enOptions)op;
 	 }
+
+
+
 	  struct GameInfo
 	  {
 		  int GameRound;
@@ -28,6 +34,18 @@ using namespace std;
 		  int DrawTime;
 		  int FinalWinner;
 	  };
+
+	  string OptionString(enOptions op)
+	  {
+		  switch (op) {
+		  case Stone:
+			  return "Stone";
+		  case Paper:
+			  return "Paper";
+		  case Scissor:
+			  return "Scissor";
+		  }
+	  }
 			
 
 };
