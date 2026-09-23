@@ -130,6 +130,17 @@ using namespace std;
 
 	  }
 
+	  void StartRounds() {
+		  int rounds = ReadNumber();
+		  stGameinfo = GameInfo();
+		  enOptions Player;
+		  enOptions Compurer;
+		  for (int i = 1; i <= rounds; i++) {
+			  cout << "\b\bRound [" << i << "] begins:\n";
+
+			  Player = ChooisingOption();
+		  }
+	  }
 
 
 };
