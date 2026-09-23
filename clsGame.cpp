@@ -24,7 +24,7 @@ using namespace std;
 		 return (enOptions)op;
 	 }
 	  
-	  enum enWinner{Player=1,Computer=2};
+	  enum enWinner{Player=1,Computer=2,Draw=3};
 
 
 
@@ -46,6 +46,42 @@ using namespace std;
 			  return "Paper";
 		  case Scissor:
 			  return "Scissor";
+		  }
+	  }
+
+	  enWinner Who_Win_In_Random(enOptions PlayerChoice, enOptions ComputerChoice) {
+
+		  switch (PlayerChoice) {
+		  case enOptions::Paper:
+			  if (Computer == enOptions::Scissor)
+				  return enWinner::Computer;
+			  else if (Computer == enOptions::Stone)
+				  return enWinner::Player;
+			  else
+				  return enWinner::Draw;
+
+		  case enOptions::Scissor:
+
+			  if (Computer == enOptions::Scissor)
+				  return enWinner::Draw;
+			  else if (Computer == enOptions::Stone)
+				  return enWinner::Computer;
+			  else
+				  return enWinner::Player;
+
+		  case enOptions::Stone:
+
+
+			  if (Computer == enOptions::Scissor)
+				  return enWinner::Player;
+			  else if (Computer == enOptions::Stone)
+				  return enWinner::Draw;
+			  else
+				  return enWinner::Computer;
+
+		  default:
+			  return enWinner::Draw;				  
+
 		  }
 	  }
 			
