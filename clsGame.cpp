@@ -20,6 +20,14 @@ using namespace std;
 		 }
 		 return (enOptions)op;
 	 }
+	  struct GameInfo
+	  {
+		  int GameRound;
+		  int PlyearWonTime;
+		  int ComputerWonTime;
+		  int DrawTime;
+		  int FinalWinner;
+	  };
 			
 
 };
