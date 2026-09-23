@@ -1,18 +1,4 @@
 ﻿  main.cpp
-C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(161,13): warning C4129: 'P': unrecognized character escape sequence
-  (compiling source file 'main.cpp')
-  
-C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(163,13): warning C4129: 'D': unrecognized character escape sequence
-  (compiling source file 'main.cpp')
-  
-C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(164,13): warning C4129: 'F': unrecognized character escape sequence
-  (compiling source file 'main.cpp')
-  
-  clsGame.cpp
-C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(161,13): warning C4129: 'P': unrecognized character escape sequence
-C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(163,13): warning C4129: 'D': unrecognized character escape sequence
-C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(164,13): warning C4129: 'F': unrecognized character escape sequence
-  Generating Code...
-C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(72,1): warning C4715: 'clsGame::OptionString': not all control paths return a value
 C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(49,1): warning C4715: 'clsGame::WinnerString': not all control paths return a value
+C:\Users\qader\source\repos\Stone-Paper-Scissor\clsGame.cpp(72,1): warning C4715: 'clsGame::OptionString': not all control paths return a value
   Stone-Paper-Scissor.vcxproj -> C:\Users\qader\source\repos\Stone-Paper-Scissor\x64\Debug\Stone-Paper-Scissor.exe
