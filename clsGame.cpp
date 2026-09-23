@@ -23,6 +23,8 @@ using namespace std;
 		 }
 		 return (enOptions)op;
 	 }
+	  
+	  enum enWinner{Player=1,Computer=2};
 
 
 
