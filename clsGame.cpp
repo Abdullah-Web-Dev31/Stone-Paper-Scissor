@@ -149,7 +149,22 @@ using namespace std;
 		  return info;
 	  }
 
+	  void StartRounds() {
+		  int rounds = ReadNumber();
+		  stGameinfo = GameInfo();
+		  enOptions Player;
+		  enOptions Compurer;
+		  enWinner winner;
+		  containerInfoRound roundInfo;
+		  for (int i = 1; i <= rounds; i++) {
+			  cout << "\b\bRound [" << i << "] begins:\n";
 
+			  Player = ChooisingOption();
+			  Compurer = GetRandomComputerChoice();
+			  winner = Who_Win_In_Random(Player, Compurer);
+			  roundInfo = GetRoundInfo(i, Player, Compurer, winner);
+			  PrintRoundInfo(roundInfo);
+		  }
 	  }
 
 };
